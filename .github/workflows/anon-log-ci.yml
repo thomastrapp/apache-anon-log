@@ -8,5 +8,5 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Run
-      run: ./test/debian-install-apache-with-anon-log.sh
+      run: sudo ./test/debian-install-apache-with-anon-log.sh
 
