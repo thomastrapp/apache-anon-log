@@ -42,7 +42,7 @@ loip=$(nslookup -query=A localhost | awk '/^Address: / { print $2 }')
 curl -fs --ipv4 -H "User-Agent: $useragent" localhost >/dev/null || perror_exit "triggering anon log failed"
 
 test -f "$anonlog"              || perror_exit "expected file '$anonlog' to exist"
-grep 127.0.0.66 "$anonlog"      || perror_exit "expected entry in anon error log"
+grep 127.0.0.66 "$anonlog"      || perror_exit "expected entry in anon log"
 grep -i "$useragent" "$anonlog" && perror_exit "user-agent exposed in anon log"
 grep 127.0.0.1 "$anonlog"       && perror_exit "ip-addr exposed in anon log"
 
