@@ -1,0 +1,12 @@
+name: Anon Log CI
+on: [push, pull_request]
+
+jobs:
+  anon_log_ci:
+    name: Anon Log CI
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Run
+      run: ./test/debian-install-apache-with-anon-log.sh
+
