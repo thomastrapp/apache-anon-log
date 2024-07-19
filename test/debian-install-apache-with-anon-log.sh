@@ -6,7 +6,7 @@ perror_exit() { echo "Error: $@" >&2 ; exit 1 ; }
 
 
 thisdir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-fconf="$thisdir/apache-anon-log.conf"
+fconf="$thisdir/../apache-anon-log.conf"
 test -f "$fconf" || perror_exit "file does not exist '$fconf'"
 conf=$(cat "$fconf")
 
